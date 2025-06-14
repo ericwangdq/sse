@@ -52,7 +52,7 @@ app.get("/", (req, res) => {
       function openConnection() {
         eventSource = new EventSource('/sse');
         eventSource.onmessage = function(event) {
-          clock.innerText = event.data;
+          clock.textContent = event.data;
         };
         eventSource.onerror = function(event) {
           console.error("EventSource failed:", event);
