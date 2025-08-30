@@ -8,9 +8,16 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          # ensure the GITHUB_TOKEN credential is available for pushing
+          persist-credentials: true
 
       # Add your build steps here, e.g. npm install/build if needed
       - name: Build
@@ -22,3 +29,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist # Change this to your build output directory
+          publish_branch: gh-pages
+          allow_no_changes: true
