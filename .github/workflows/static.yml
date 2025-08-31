@@ -3,12 +3,12 @@ name: Deploy static content to Pages
 
 on:
   # Runs on pushes targeting the default branch
-  push:
-    branches: ["main"]
+  # push:
+  #   branches: ["main"]
 
   # cron job to run at every 5 minutes
-  # schedule:
-  #   - cron: "*/5 * * * *"
+  schedule:
+    - cron: "*/5 * * * *"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
