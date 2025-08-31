@@ -41,7 +41,7 @@ jobs:
       # Add your build steps here, e.g. npm install/build if needed
       - name: Build
         run: |
-          node -version
+          node --version
           npm install
           npm run build
       - name: Upload artifact
