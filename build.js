@@ -14,7 +14,7 @@ const htmlContent = `
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Empty Page</title>
+    <title>Github Action Deploy Page</title>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         document.querySelector(
