@@ -6,6 +6,10 @@ on:
   push:
     branches: ["main"]
 
+  # cron job to run at every 5 minutes
+  # schedule:
+  #   - cron: "*/5 * * * *"
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -33,17 +37,18 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
-      
+
       # Add your build steps here, e.g. npm install/build if needed
       - name: Build
         run: |
+          node -version
           npm install
           npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
-          path: './dist'
+          path: "./dist"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
